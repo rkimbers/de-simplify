@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "transform": {
+            "queryTransform": {
+              "removeParams": ["utm_source"]
+            }
+          }
+        }
+      },
+      "condition": {
+        "urlFilter": "utm_source=",
+        "resourceTypes": ["main_frame"]
+      }
+    },
+    {
+      "id": 2,
+      "priority": 1,
+      "action": {
+        "type": "redirect",
+        "redirect": {
+          "transform": {
+            "queryTransform": {
+              "removeParams": ["ref"]
+            }
+          }
+        }
+      },
+      "condition": {
+        "urlFilter": "ref=",
+        "resourceTypes": ["main_frame"]
+      }
+    }
+  ]
