@@ -7,3 +7,6 @@
 # Editor and IDE settings
 .vscode/
 .idea/
+
+# Metadata
+src/_metadata
