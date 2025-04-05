@@ -5,7 +5,7 @@ chrome.webRequest.onBeforeRequest.addListener(
       let modified = false;
       
       ["utm_source", "ref"].forEach(param => {
-        if (params.has(param) && params.get(param).toLowerCase() === "simplify") {
+        if (params.has(param)) {
           params.delete(param);
           modified = true;
         }
@@ -17,10 +17,10 @@ chrome.webRequest.onBeforeRequest.addListener(
         if (newQuery) {
           newUrl += "?" + newQuery;
         }
-        
+        console.log("Redirecting to:", newUrl);
         return { redirectUrl: newUrl };
       }
     },
-    { urls: ["<all_urls>"] },
+    { urls: ["<all_urls>"], types: ["main_frame"] },
     ["blocking"]
   );
