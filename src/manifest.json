@@ -1,6 +1,6 @@
 {
     "manifest_version": 3,
-    "name": "Simplify URL Cleaner",
+    "name": "de-simplify",
     "version": "1.0",
     "description": "Strips Simplify query parameters from URLs before navigation.",
     "permissions": [
