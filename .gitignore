@@ -1,0 +1,9 @@
+# Log files
+*.log
+
+# MacOS specific files
+.DS_Store
+
+# Editor and IDE settings
+.vscode/
+.idea/
