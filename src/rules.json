@@ -1,38 +1,80 @@
 [
-    {
-      "id": 1,
-      "priority": 1,
-      "action": {
-        "type": "redirect",
-        "redirect": {
-          "transform": {
-            "queryTransform": {
-              "removeParams": ["utm_source"]
-            }
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "removeParams": [
+              "utm_source"
+            ]
           }
         }
-      },
-      "condition": {
-        "urlFilter": "utm_source=",
-        "resourceTypes": ["main_frame"]
       }
     },
-    {
-      "id": 2,
-      "priority": 1,
-      "action": {
-        "type": "redirect",
-        "redirect": {
-          "transform": {
-            "queryTransform": {
-              "removeParams": ["ref"]
-            }
+    "condition": {
+      "regexFilter": "[?&]utm_source=simplify(&|#|$)",
+      "isUrlFilterCaseSensitive": false,
+      "resourceTypes": [
+        "main_frame"
+      ],
+      "requestMethods": [
+        "get"
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "removeParams": [
+              "ref"
+            ]
           }
         }
-      },
-      "condition": {
-        "urlFilter": "ref=",
-        "resourceTypes": ["main_frame"]
       }
+    },
+    "condition": {
+      "regexFilter": "[?&]ref=simplify(&|#|$)",
+      "isUrlFilterCaseSensitive": false,
+      "resourceTypes": [
+        "main_frame"
+      ],
+      "requestMethods": [
+        "get"
+      ]
     }
-  ]
+  },
+  {
+    "id": 3,
+    "priority": 1,
+    "action": {
+      "type": "redirect",
+      "redirect": {
+        "transform": {
+          "queryTransform": {
+            "removeParams": [
+              "gh_src"
+            ]
+          }
+        }
+      }
+    },
+    "condition": {
+      "regexFilter": "[?&]gh_src=simplify(&|#|$)",
+      "isUrlFilterCaseSensitive": false,
+      "resourceTypes": [
+        "main_frame"
+      ],
+      "requestMethods": [
+        "get"
+      ]
+    }
+  }
+]
