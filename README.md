@@ -2,11 +2,11 @@
 
 Are you ever tired of sending out countless internship applications without any response? This can be attributed to employers using aggressive application filters, discarding submissions that can be traced back to popular job websites!
 
-de‑simplify is a open source Chrome extension that removes unwanted "Simplify" query parameters (like `utm_source` and `ref`) from URLs before they load. This ensures that links redirect without the extra pesky tracking parameters added by Simplify.
+de‑simplify is a open source Chrome extension that removes unwanted "Simplify" query parameters (like `utm_source`, `ref`, and `gh_src`) from URLs before they load — but only when the parameter value is `Simplify`. This ensures that links redirect without the extra pesky tracking parameters added by Simplify, while leaving real referral links (for example a recruiter's `?ref=abc`) intact.
 
 ## How It Works
 
-de‑simplify uses Chrome's Manifest V3 "Declarative Net Request" API to automatically strip specified query parameters from any application URL you navigate to.
+de‑simplify uses Chrome's Manifest V3 "Declarative Net Request" API to automatically strip specified query parameters from any application URL you navigate to, when their value matches Simplify (case-insensitive).
 
 ## Installation
 
@@ -22,8 +22,7 @@ de‑simplify uses Chrome's Manifest V3 "Declarative Net Request" API to automat
 
 3. Test It Out:
 
-   - Navigate to a URL containing parameters like `?utm_source=Simplify` or `?ref=Simplify`.
-   - The extension will automatically clean the URL by removing these parameters.
+   - Open `https://example.com/?utm_source=Simplify&ref=abc` and confirm only `utm_source` gets removed.
 
 ## Contributing
 
